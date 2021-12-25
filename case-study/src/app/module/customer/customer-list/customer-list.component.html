@@ -1,0 +1,28 @@
+<h1>Cus List</h1>
+<table class="table">
+  <tr>
+    <td>STT</td>
+    <td>Name</td>
+    <td>Giá</td>
+    <td>Mô tả</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <tr *ngFor="let c of customerList; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{c.id}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.dateOfBirth}}</td>
+    <td>{{c.idCard}}</td>
+    <td>{{c.phone}}</td>
+    <td>{{c.email}}</td>
+    <td>{{c.address}}</td>
+    <td>{{c.cusType.type}}</td>
+    <ng-container [ngSwitch]="c.gender">
+      <td *ngSwitchCase="1">Male</td>
+      <td *ngSwitchCase="0">Female</td>
+    </ng-container>
+    <td><a [routerLink]="['/customer/detail',c.id]">Edit</a></td>
+    <td><a [routerLink]="['/customer/delete',c.id]">Delete</a></td>
+  </tr>
+</table>

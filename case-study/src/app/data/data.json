@@ -1,0 +1,59 @@
+{
+  "customer_type": [
+    {
+      "id": 1,
+      "type": "Diamond"
+    },
+    {
+      "id": 2,
+      "type": "Platinium"
+    },
+    {
+      "id": 3,
+      "type": "Gold"
+    },
+    {
+      "id": 4,
+      "type": "Silver"
+    },
+    {
+      "id": 5,
+      "type": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "Nguyen A",
+      "dateOfBirth": "1991-02-23",
+      "gender": 0,
+      "idCard": "123456789",
+      "phone": "09123456",
+      "email": "a@ff.ff",
+      "address": "DN",
+      "cusType": 1
+    },
+    {
+      "id": 2,
+      "name": "Nguyen B",
+      "dateOfBirth": "1991-04-23",
+      "gender": 0,
+      "idCard": "123456789",
+      "phone": "09123456",
+      "email": "a@ff.ff",
+      "address": "HN",
+      "cusType": 2
+    },
+    {
+      "id": 3,
+      "name": "Nguyen C",
+      "dateOfBirth": "1991-02-23",
+      "gender": 1,
+      "idCard": "123456789",
+      "phone": "09123456",
+      "email": "a@ff.ff",
+      "address": "HCM",
+      "cusType": 3
+    }
+  ]
+}
