@@ -20,7 +20,6 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.cusService.getAll().subscribe(
       data => {
-        console.log(data);
         this.customerList = data;
       }, error => {
         console.log(error);
@@ -38,6 +37,4 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
-
 }
