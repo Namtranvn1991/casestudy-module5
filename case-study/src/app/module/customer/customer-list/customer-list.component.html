@@ -1,10 +1,17 @@
 <h1>Cus List</h1>
+<a routerLink="/customer/create">create</a>
 <table class="table">
   <tr>
     <td>STT</td>
-    <td>Name</td>
-    <td>Giá</td>
-    <td>Mô tả</td>
+    <td>id</td>
+    <td>name</td>
+    <td>dateOfBirth</td>
+    <td>idCard</td>
+    <td>phone</td>
+    <td>email</td>
+    <td>address</td>
+    <td>cusType</td>
+    <td>gender</td>
     <td>Edit</td>
     <td>Delete</td>
   </tr>
@@ -18,6 +25,9 @@
     <td>{{c.email}}</td>
     <td>{{c.address}}</td>
     <td>{{c.cusType.type}}</td>
+    <ng-container *ngFor="let ct of cusTypeList">
+      <td *ngIf="c.cusType.id === ct.id">{{ct.type}}</td>
+    </ng-container>
     <ng-container [ngSwitch]="c.gender">
       <td *ngSwitchCase="1">Male</td>
       <td *ngSwitchCase="0">Female</td>

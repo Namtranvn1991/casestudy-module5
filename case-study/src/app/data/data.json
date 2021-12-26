@@ -31,7 +31,8 @@
       "phone": "09123456",
       "email": "a@ff.ff",
       "address": "DN",
-      "cusType": 1
+      "cusType": {"id": 1,
+        "type": "Diamond"}
     },
     {
       "id": 2,
@@ -42,7 +43,8 @@
       "phone": "09123456",
       "email": "a@ff.ff",
       "address": "HN",
-      "cusType": 2
+      "cusType": {"id": 2,
+        "type": "Platinium"}
     },
     {
       "id": 3,
@@ -53,7 +55,8 @@
       "phone": "09123456",
       "email": "a@ff.ff",
       "address": "HCM",
-      "cusType": 3
+      "cusType": {"id": 2,
+        "type": "Platinium"}
     }
   ]
 }

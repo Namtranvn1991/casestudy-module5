@@ -8,7 +8,7 @@ import {CustomerType} from '../mode/customer/customer-type';
 })
 export class CustomerService {
   private urlCustomer = 'http://localhost:3000/customer';
-  private urlCusType = 'http://localhost:3000/customerType';
+  private urlCusType = 'http://localhost:3000/customer_type';
 
   constructor(private http: HttpClient) { }
 

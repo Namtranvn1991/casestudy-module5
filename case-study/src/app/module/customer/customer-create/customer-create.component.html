@@ -1,1 +1,91 @@
-<p>customer-create works!</p>
+<div class="card">
+  <div class="card-body">
+    <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">name:</label>
+        <input type="text" name="name" id="name" class="form-control" formControlName="name">
+        <div class="error-messages">
+          <ng-container *ngFor="let error of errorMessages.name">
+            <div class="error-message text-danger fst-italic" *ngIf="name().hasError(error.type) && (name().dirty || name().touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <label for="phone">Phone number:</label>
+        <input type="text" name="phone" id="phone" class="form-control" formControlName="phone">
+        <div class="error-messages">
+          <ng-container *ngFor="let error of errorMessages.phone">
+            <div class="error-message text-danger fst-italic" *ngIf="phone().hasError(error.type) && (phone().dirty || phone().touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <label for="email">email:</label>
+        <input type="text" name="email" id="email" class="form-control" formControlName="email">
+        <div class="error-messages">
+          <ng-container *ngFor="let error of errorMessages.email">
+            <div class="error-message text-danger fst-italic" *ngIf="email().hasError(error.type) && (email().dirty || email().touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <label for="idCard">idCard:</label>
+        <input type="text" name="idCard" id="idCard" class="form-control" formControlName="idCard">
+        <div class="error-messages">
+          <ng-container *ngFor="let error of errorMessages.idCard">
+            <div class="error-message text-danger fst-italic" *ngIf="idCard().hasError(error.type) && (idCard().dirty || idCard().touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <label for="address">address:</label>
+        <input type="text" name="address" id="address" class="form-control" formControlName="address">
+        <small *ngIf="form.controls.address.errors?.required && (form.controls.address.touched || form.controls.address.dirty) "
+               class="text-warning fst-italic">Please fill out this field!</small>
+      </div>
+      <div>
+        <label for="cusType">cusType:</label>
+        <div>
+          <select id="cusType">
+           <ng-container *ngFor="let c of cusTypes">
+             <option value="{{c.id}}">{{c.type}}</option>
+           </ng-container>
+          </select>
+        </div>
+        <small *ngIf="form.controls.cusType.errors?.required && (form.controls.cusType.touched || form.controls.cusType.dirty) "
+               class="text-warning fst-italic">Please fill out this field!</small>
+      </div>
+      <div>
+        Gender:
+      </div>
+      <div class="btn-group">
+        <label>
+          <input type="radio" name="gender" value="Male" formControlName="gender">Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="Female" formControlName="gender">Female
+        </label>
+        <small *ngIf="form.controls.gender.errors?.required && (onSubmit()) "
+               class="text-warning fst-italic">Please fill out this field!</small>
+      </div>
+
+      <div>
+        <label for="dateOfBirth">dateOfBirth:</label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control" formControlName="dateOfBirth">
+      </div>
+      <pre>
+        Form Error - {{ form.errors | json }}
+      </pre>
+      <button class="btn-primary" type="submit" [disabled]="form.errors===null">Submit</button>
+    </form>
+  </div>
+
+</div>
